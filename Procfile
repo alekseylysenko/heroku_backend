@@ -1,0 +1,1 @@
+web: gunicorn firmware_rt.wsgi:application
