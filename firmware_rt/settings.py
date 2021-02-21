@@ -31,15 +31,15 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-'django.contrib.staticfiles',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-
     'firmware.apps.FirmwareConfig',
     'rest_framework',
+    'django.contrib.staticfiles',
 
 ]
 REST_FRAMEWORK = {
