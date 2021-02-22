@@ -128,5 +128,5 @@ import mimetypes
 mimetypes.add_type("text/css", ".css", True)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/staticfiles/'
+STATIC_URL = 'firmware_rt/staticfiles/'
 
