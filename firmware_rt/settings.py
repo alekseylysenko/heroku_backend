@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-
+    'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'firmware.apps.FirmwareConfig',
     'rest_framework',
-    'django.contrib.staticfiles',
+
 
 ]
 REST_FRAMEWORK = {
@@ -128,5 +128,5 @@ import mimetypes
 mimetypes.add_type("text/css", ".css", True)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = 'staticfiles/'
+STATIC_URL = '/staticfiles/'
 
