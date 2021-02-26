@@ -18,5 +18,6 @@ class TechnologySerializer(serializers.ModelSerializer):
     class Meta:
         model = Technology
         fields = '__all__'
+        ordering = ['-id']
 
 
