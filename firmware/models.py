@@ -16,7 +16,7 @@ class Technology(models.Model):
     def __str__(self):
         return self.title
     class Meta:
-        ordering: ['-id']
+        ordering: ['-pk']
 
 
 class Category(models.Model):
