@@ -20,7 +20,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 
 class TechnologyViewSet(viewsets.ModelViewSet):
-    queryset = Technology.objects.all()
+    queryset = Technology.objects.all().order_by('id')
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
