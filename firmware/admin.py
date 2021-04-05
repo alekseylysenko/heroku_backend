@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category,Firmware,Technology
+from .models import Category, Firmware, Technology
 # Register your models here.
 
 

@@ -6,7 +6,7 @@ from .serializers import FirmwareSerializer, CategorySerializer, TechnologySeria
 class FirmwareViewSet(viewsets.ModelViewSet):
     queryset = Firmware.objects.all()
     permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly
+        permissions.IsAuthenticated
     ]
     serializer_class = FirmwareSerializer
 
@@ -14,7 +14,7 @@ class FirmwareViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly
+        permissions.IsAuthenticated
     ]
     serializer_class = CategorySerializer
 
@@ -22,7 +22,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class TechnologyViewSet(viewsets.ModelViewSet):
     queryset = Technology.objects.all()
     permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly
+        permissions.IsAuthenticated
     ]
     serializer_class = TechnologySerializer
 
