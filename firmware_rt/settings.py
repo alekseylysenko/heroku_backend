@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'firmware.apps.FirmwareConfig',
-    'rest_framework_api_key',
     'rest_framework',
-
+    'rest_framework_api_key',
 
 ]
 REST_FRAMEWORK = {
