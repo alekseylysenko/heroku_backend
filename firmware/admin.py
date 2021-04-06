@@ -1,8 +1,7 @@
 from django.contrib import admin
 from .models import Category, Firmware, Technology
-from rest_framework_api_key.admin import APIKeyModelAdmin
 
-# Register your models here.
+
 
 
 @admin.register(Firmware)
