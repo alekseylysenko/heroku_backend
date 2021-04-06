@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Category, Firmware, Technology
+from rest_framework_api_key.admin import APIKeyModelAdmin
+
 # Register your models here.
 
 
@@ -16,4 +18,5 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
     list_display = ('title',)
+
 
