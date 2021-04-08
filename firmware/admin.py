@@ -6,7 +6,7 @@ from .models import Category, Firmware, Technology
 
 @admin.register(Firmware)
 class FirmwareAdmin(admin.ModelAdmin):
-    list_display = ('title', 'url', 'category')
+    list_display = ('id','title', 'url', 'category')
 
 
 @admin.register(Category)
