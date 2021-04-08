@@ -5,6 +5,7 @@ from .serializers import FirmwareSerializer, CategorySerializer, TechnologySeria
 
 class FirmwareViewSet(viewsets.ModelViewSet):
     queryset = Firmware.objects.all()
+    ordering = ['id']
     permission_classes = [
         permissions.AllowAny
     ]
