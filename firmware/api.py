@@ -15,6 +15,8 @@ class FirmwareViewSet(viewsets.ModelViewSet):
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
+    ordering = ['id']
+    ordering_fields = ['id', 'title']
     permission_classes = [
         permissions.AllowAny
     ]
