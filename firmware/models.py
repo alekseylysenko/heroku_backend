@@ -41,7 +41,8 @@ class CategoryPost(models.Model):
     title = models.CharField(max_length=100, verbose_name='Категория')
 
     class Meta:
-        verbose_name = "Категории для Статей"
+        verbose_name = "Категории для Статьи"
+        verbose_name_plural = "Категории для Статей"
 
     def __str__(self):
         return self.title
