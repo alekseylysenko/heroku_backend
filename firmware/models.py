@@ -10,12 +10,20 @@ class Firmware(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = "Прошивка"
+        verbose_name_plural = "Прошивки"
+
 
 class Technology(models.Model):
     title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = "Технология подключения"
+        verbose_name_plural = "Технологии подключения"
 
 
 class Category(models.Model):
@@ -25,6 +33,10 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = "Категория для Прошивки"
+        verbose_name_plural = "Категории для Прошивок"
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название')
@@ -32,6 +44,10 @@ class Post(models.Model):
     categoryPost = models.ForeignKey('CategoryPost', on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     published = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Статья"
+        verbose_name_plural = "Статьи"
 
     def __str__(self):
         return self.title
