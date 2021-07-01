@@ -19,7 +19,7 @@ class Technology(models.Model):
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, verbose_name='Категория')
     technology = models.ForeignKey(Technology, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -27,7 +27,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, verbose_name='Название')
     body = models.TextField()
     categoryPost = models.ForeignKey('CategoryPost', on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -38,7 +38,10 @@ class Post(models.Model):
 
 
 class CategoryPost(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, verbose_name='Категория')
+
+    class Meta:
+        verbose_name = "Категории для Статей"
 
     def __str__(self):
         return self.title
