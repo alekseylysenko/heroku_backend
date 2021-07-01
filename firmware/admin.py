@@ -18,10 +18,10 @@ class TechnologyAdmin(admin.ModelAdmin):
 
 
 @admin.register(Post)
-class TechnologyAdmin(admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'categoryPost', 'author')
 
 
 @admin.register(CategoryPost)
-class TechnologyAdmin(admin.ModelAdmin):
+class CategoryPostAdmin(admin.ModelAdmin):
     list_display = ('title',)
