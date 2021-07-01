@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import Category, Firmware, Technology
-
-
+from .models import Category, Firmware, Technology, Post, CategoryPost
 
 
 @admin.register(Firmware)
@@ -19,3 +17,11 @@ class TechnologyAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
+@admin.register(Post)
+class TechnologyAdmin(admin.ModelAdmin):
+    list_display = ('title', 'categoryPost', 'author')
+
+
+@admin.register(CategoryPost)
+class TechnologyAdmin(admin.ModelAdmin):
+    list_display = ('title',)
