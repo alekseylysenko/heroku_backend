@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Technology, Firmware, Post, CategoryPost
+from .models import Category, Technology, Firmware, Post, CategoryPost, Chat
 
 
 class FirmwareSerializer(serializers.ModelSerializer):
@@ -30,3 +30,11 @@ class CategoryPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = CategoryPost
         fields = '__all__'
+
+
+class ChatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Chat
+        fields = '__all__'
+
+

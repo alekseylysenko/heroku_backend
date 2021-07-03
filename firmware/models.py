@@ -64,3 +64,14 @@ class CategoryPost(models.Model):
         return self.title
 
 
+class Chat(models.Model):
+    nameUser = models.CharField(max_length=50)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.nameUser
+
+    class Meta:
+        verbose_name = "Данные из чата"
+        verbose_name_plural = "Данные из чата"
+
