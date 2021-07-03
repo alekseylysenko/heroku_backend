@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Firmware, Technology, Post, CategoryPost
+from .models import Category, Firmware, Technology, Post, CategoryPost, Chat
 
 
 @admin.register(Firmware)
@@ -25,3 +25,10 @@ class PostAdmin(admin.ModelAdmin):
 @admin.register(CategoryPost)
 class CategoryPostAdmin(admin.ModelAdmin):
     list_display = ('title',)
+
+
+@admin.register(Chat)
+class ChatAdmin(admin.ModelAdmin):
+    list_display = ('nameUser', 'message')
+
+
