@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'firmware.apps.FirmwareConfig',
     'rest_framework',
-
+    'django_filters'
 
 ]
 REST_FRAMEWORK = {
