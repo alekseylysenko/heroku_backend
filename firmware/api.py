@@ -1,5 +1,5 @@
 from .models import Firmware, Category, Technology, Post, CategoryPost, Chat
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, filters
 from .serializers import FirmwareSerializer, CategorySerializer, TechnologySerializer, PostSerializer, \
     CategoryPostSerializer, ChatSerializer
 from rest_framework.authentication import BasicAuthentication
@@ -7,6 +7,7 @@ from rest_framework.authentication import BasicAuthentication
 
 class FirmwareViewSet(viewsets.ModelViewSet):
     search_field = ['title']
+    filter_backends = (filters.SearchFilter,)
     queryset = Firmware.objects.all()
     ordering = ['id']
     ordering_fields = ['id', 'title']
@@ -38,6 +39,7 @@ class TechnologyViewSet(viewsets.ModelViewSet):
 
 class PostViewSet(viewsets.ModelViewSet):
     search_field = ['title', 'body']
+    filter_backends = (filters.SearchFilter,)
     queryset = Post.objects.all().order_by('id')
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
