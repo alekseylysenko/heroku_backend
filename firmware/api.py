@@ -3,6 +3,7 @@ from rest_framework import viewsets, permissions, filters, generics,mixins
 from .serializers import FirmwareSerializer, CategorySerializer, TechnologySerializer, PostSerializer, \
     CategoryPostSerializer, ChatSerializer
 from rest_framework.authentication import BasicAuthentication
+import django_filters.rest_framework
 
 
 class FirmwareViewSet(viewsets.ModelViewSet):
@@ -38,7 +39,7 @@ class TechnologyViewSet(viewsets.ModelViewSet):
 
 
 class PostViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    filter_backends = [filters.SearchFilter]
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     search_field = ['title', 'body']
     queryset = Post.objects.all().order_by('id')
     permission_classes = [
