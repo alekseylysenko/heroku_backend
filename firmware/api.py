@@ -1,4 +1,4 @@
-from django_filters.rest_framework import DjangoFilterBackend
+
 from rest_framework.filters import SearchFilter
 
 from .models import Firmware, Category, Technology, Post, CategoryPost, Chat
@@ -10,7 +10,7 @@ from rest_framework.authentication import BasicAuthentication
 
 class FirmwareViewSet(viewsets.ModelViewSet):
     search_field = ['title']
-    filter_backends = (SearchFilter, DjangoFilterBackend)
+    filter_backends = (SearchFilter,)
     queryset = Firmware.objects.all()
     ordering = ['id']
     ordering_fields = ['id', 'title']
