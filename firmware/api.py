@@ -37,7 +37,7 @@ class TechnologyViewSet(viewsets.ModelViewSet):
     serializer_class = TechnologySerializer
 
 
-class PostViewSet(generics.ListCreateAPIView):
+class PostViewSet(generics.ListCreateAPIView, viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter]
     search_field = ['title', 'body']
     queryset = Post.objects.all().order_by('id')
