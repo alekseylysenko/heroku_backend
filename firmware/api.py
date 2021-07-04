@@ -6,6 +6,7 @@ from rest_framework.authentication import BasicAuthentication
 
 
 class FirmwareViewSet(viewsets.ModelViewSet):
+    search_field = ['title']
     queryset = Firmware.objects.all()
     ordering = ['id']
     ordering_fields = ['id', 'title']
@@ -36,6 +37,7 @@ class TechnologyViewSet(viewsets.ModelViewSet):
 
 
 class PostViewSet(viewsets.ModelViewSet):
+    search_field = ['title', 'body']
     queryset = Post.objects.all().order_by('id')
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
@@ -52,6 +54,7 @@ class CategoryPostViewSet(viewsets.ModelViewSet):
 
 
 class ChatViewSet(viewsets.ModelViewSet):
+
     queryset = Chat.objects.all().order_by('id')
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
