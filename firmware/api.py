@@ -40,9 +40,9 @@ class TechnologyViewSet(viewsets.ModelViewSet):
     serializer_class = TechnologySerializer
 
 
-class PostViewSet(generics.ListCreateAPIView):
+class PostViewSet(generics.ListAPIView):
     search_field = ['title', 'body']
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = [filters.SearchFilter]
     queryset = Post.objects.all()
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
