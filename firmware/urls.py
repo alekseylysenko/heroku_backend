@@ -1,7 +1,5 @@
 from django.urls import path
 from rest_framework import routers
-
-from . import api
 from .api import FirmwareViewSet, CategoryViewSet, TechnologyViewSet, PostViewSet, CategoryPostViewSet, ChatViewSet
 
 routers = routers.DefaultRouter()
@@ -13,5 +11,5 @@ routers.register('api/chat', ChatViewSet, 'chat')
 
 urlpatterns = [
     routers.urls,
-    path('api/posts/', PostViewSet.as_view()),
+    path('api/posts/', PostViewSet.as_view(), name='posts'),
 ]
