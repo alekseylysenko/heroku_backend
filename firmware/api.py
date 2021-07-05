@@ -43,7 +43,7 @@ class TechnologyViewSet(viewsets.ModelViewSet):
 class PostViewSet(generics.ListCreateAPIView):
     search_field = ['title', 'body']
     filter_backends = [filters.SearchFilter]
-    queryset = Post.objects.all().order_by('id')
+    queryset = Post.objects.all()
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
