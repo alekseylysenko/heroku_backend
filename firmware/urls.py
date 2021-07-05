@@ -8,8 +8,5 @@ routers.register('api/category', CategoryViewSet, 'category'),
 routers.register('api/technology', TechnologyViewSet, 'technology')
 routers.register('api/category_post', CategoryPostViewSet, 'category_post')
 routers.register('api/chat', ChatViewSet, 'chat')
+routers.register('api/posts/', PostViewSet.as_view(), 'posts')
 
-urlpatterns = [
-    routers.urls,
-    path('api/posts/', PostViewSet.as_view(), name='posts'),
-]
