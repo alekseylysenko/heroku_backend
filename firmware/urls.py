@@ -13,5 +13,5 @@ routers.register('api/chat', ChatViewSet, 'chat')
 
 urlpatterns = [
     routers.urls,
-    path('api/posts', PostViewSet.as_view(), 'posts'),
+    path('api/posts/', PostViewSet.as_view()),
 ]
