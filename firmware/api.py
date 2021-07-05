@@ -41,7 +41,7 @@ class TechnologyViewSet(viewsets.ModelViewSet):
 
 
 class PostViewSet(viewsets.ModelViewSet):
-    search_fields = ['title', 'body']
+    search_fields = ['title',]
     filter_backends = [filters.SearchFilter]
     queryset = Post.objects.all()
     permission_classes = [
