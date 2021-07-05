@@ -49,10 +49,6 @@ class PostViewSet(generics.ListCreateAPIView):
     ]
     serializer_class = PostSerializer
 
-    @classmethod
-    def get_extra_actions(cls):
-        return []
-
 
 class CategoryPostViewSet(viewsets.ModelViewSet):
     queryset = CategoryPost.objects.all().order_by('id')
