@@ -2,7 +2,7 @@
 from rest_framework.filters import SearchFilter
 
 from .models import Firmware, Category, Technology, Post, CategoryPost, Chat
-from rest_framework import viewsets, permissions, filters
+from rest_framework import viewsets, permissions, filters, generics
 from .serializers import FirmwareSerializer, CategorySerializer, TechnologySerializer, PostSerializer, \
     CategoryPostSerializer, ChatSerializer
 from rest_framework.authentication import BasicAuthentication
@@ -40,7 +40,7 @@ class TechnologyViewSet(viewsets.ModelViewSet):
     serializer_class = TechnologySerializer
 
 
-class PostViewSet(viewsets.ModelViewSet):
+class PostViewSet(generics.ListCreateAPIView):
     search_field = ['title', 'body']
     filter_backends = [filters.SearchFilter]
     queryset = Post.objects.all().order_by('id')
