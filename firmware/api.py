@@ -1,10 +1,10 @@
 
 from rest_framework.filters import SearchFilter
 
-from .models import Firmware, Category, Technology, Post, CategoryPost, Chat
+from .models import Firmware, Category, Technology, Post, CategoryPost
 from rest_framework import viewsets, permissions, filters, generics
 from .serializers import FirmwareSerializer, CategorySerializer, TechnologySerializer, PostSerializer, \
-    CategoryPostSerializer, ChatSerializer
+    CategoryPostSerializer
 from rest_framework.authentication import BasicAuthentication
 
 
@@ -58,12 +58,6 @@ class CategoryPostViewSet(viewsets.ModelViewSet):
     serializer_class = CategoryPostSerializer
 
 
-class ChatViewSet(viewsets.ModelViewSet):
 
-    queryset = Chat.objects.all().order_by('id')
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly
-    ]
-    serializer_class = ChatSerializer
 
 

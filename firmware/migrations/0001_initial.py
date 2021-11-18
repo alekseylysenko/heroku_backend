@@ -33,6 +33,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=100)),
                 ('url', models.CharField(max_length=255)),
                 ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='firmware.category')),
+                ('isDownload', models.BooleanField(default=False)),
             ],
         ),
         migrations.AddField(
