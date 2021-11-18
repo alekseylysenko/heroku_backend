@@ -6,6 +6,7 @@ class Firmware(models.Model):
     title = models.CharField(max_length=100)
     url = models.CharField(max_length=255)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    isDownload = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
